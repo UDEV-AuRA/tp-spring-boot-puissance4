@@ -3,7 +3,14 @@
 <head>
 </head>
 <body>
+{{#game.tourJoueur1}}
+==>
+{{/game.tourJoueur1}}
 User 1 : {{game.nom1}}
+
+{{^game.tourJoueur1}}
+==>
+{{/game.tourJoueur1}}
 User 2 : {{game.nom2}}
 New game !
 
