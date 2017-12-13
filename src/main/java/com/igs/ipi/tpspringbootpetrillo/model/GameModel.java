@@ -41,4 +41,14 @@ public class GameModel {
         this.jetons = jetons;
     }
 
+    public void add(Integer index) {
+        // h=0 est la ligne du haut, on va itérer sur la hateur en sens inverse pour cherche une place libre en bas
+        for (int h = jetons.length - 1; h >= 0; h--) {
+            if (jetons[h][index] == Jeton.VIDE) {
+                jetons[h][index] = Jeton.ROUGE;
+                return;
+            }
+        }
+        throw new IllegalArgumentException("Aucune place disponible pour un jeton en index " + index);
+    }
 }

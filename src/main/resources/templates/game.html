@@ -10,11 +10,11 @@ New game !
 <table border="1">
     <tbody>
     {{#game.jetons}}
-        <tr>
-            {{#.}}
-                <td>{{.}}</td>
-            {{/.}}
-        </tr>
+    <tr>
+        {{#.}}
+        <td><a href="http://localhost:8080/game/drop/{{-index}}">{{.}}</a></td>
+        {{/.}}
+    </tr>
     {{/game.jetons}}
     </tbody>
 </table>
