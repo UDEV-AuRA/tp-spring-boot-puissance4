@@ -13,6 +13,7 @@ Dans notre cas nous allons prendre (en cochant les cases en mode "full"):
   - JPA (=Java Persistance API : pour faire de l'hibernate)
   - HSQLDB (base de données SQL intégré
   - DEVTOOLS (pour faciliter le développement)
+  - MUSTACHE (pour la création de page web dynamique)
   
   Cela permet de générer un zip contenant le squelette d'un projet à intégrer directement dans eclipse ou Intellij (choisir le mode import project maven).
   Vous devez pouvoir executer la classe com.igs.ipi.tpspringbootpetrillo.TpSpringBootPetrilloApplication#main.
