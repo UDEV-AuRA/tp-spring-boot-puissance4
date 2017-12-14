@@ -6,7 +6,27 @@
 </head>
 <body>
 
-<b>Hello {{gamer1}}</b>
+    <div><b>Joueur 1 : {{game.nomGamer1}}</b></div>
+    <div><b>Joueur 2 : {{game.nomGamer2}}</b></div>
+
+    <table border="1" width="300px" height="200px">
+
+        <tbody>
+
+            {{#game.tableau}}
+                <tr>
+
+                    {{#.}}
+                        <td>{{.}}</td>
+                    {{/.}}
+
+                </tr>
+
+            {{/game.tableau}}
+
+        </tbody>
+
+    </table>
 
 </body>
 </html>

@@ -1,14 +1,32 @@
 package com.igs.ipi.tpspringboot.julienpinteaux.Model;
 
 public class GameModel {
-    public String getNom() {
-        return nom;
+
+    private String nomGamer1;
+    private String nomGamer2;
+    private Integer tableau[][] = new Integer[6][7];
+
+    public String getNomGamer1() {
+        return nomGamer1;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
+    public void setNomGamer1(String nomGamer1) {
+        this.nomGamer1 = nomGamer1;
     }
 
-    private String nom;
+    public String getNomGamer2() {
+        return nomGamer2;
+    }
 
+    public void setNomGamer2(String nomGamer2) {
+        this.nomGamer2 = nomGamer2;
+    }
+
+    public Integer[][] getTableau() {
+        return tableau;
+    }
+
+    public void setTableau(Integer[][] tableau) {
+        this.tableau = tableau;
+    }
 }
