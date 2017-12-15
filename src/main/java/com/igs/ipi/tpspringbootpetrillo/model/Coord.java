@@ -19,7 +19,8 @@ public class Coord {
         List<List<Coord>> alignements = new ArrayList<>();
         alignements.add(this.variations(nbAAligner - 1, lengthX, lengthY, (decalage) -> this.decalerEnVertical(decalage)));
         alignements.add(this.variations(nbAAligner - 1, lengthX, lengthY, (decalage) -> this.decalerEnHorizontal(decalage)));
-        alignements.add(this.variations(nbAAligner - 1, lengthX, lengthY, (decalage) -> this.decalerEnDiagonal(decalage)));
+        alignements.add(this.variations(nbAAligner - 1, lengthX, lengthY, (decalage) -> this.decalerEnDiagonalNE(decalage)));
+        alignements.add(this.variations(nbAAligner - 1, lengthX, lengthY, (decalage) -> this.decalerEnDiagonalSE(decalage)));
         return alignements;
     }
 
@@ -46,8 +47,12 @@ public class Coord {
         return new Coord(x + decallage, y);
     }
 
-    private Coord decalerEnDiagonal(int decallage) {
+    private Coord decalerEnDiagonalNE(int decallage) {
         return new Coord(x + decallage, y + decallage);
     }
 
+    private Coord decalerEnDiagonalSE(int decallage) {
+        return new Coord(x + decallage, y - decallage);
+    }
+    
 }
