@@ -6,6 +6,7 @@ import com.igs.ipi.tpspringboot.julienpinteaux.Session.PartieEnCours;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -19,6 +20,14 @@ public class GameController {
     @Autowired
     private PartieEnCours partieEnCours;
 
+    @GetMapping
+    public ModelAndView continueGame(){
+        GameModel game = partieEnCours.getGame();
+        ModelAndView mav = new ModelAndView("game");
+        mav.addObject("game",game);
+        return mav;
+    }
+
     @GetMapping("/new")
     public ModelAndView newGame() {
         GameModel game = gameService.newGame();
@@ -28,18 +37,13 @@ public class GameController {
         return mav;
     }
 
-    @GetMapping
-    public ModelAndView continueGame(){
-        GameModel game = partieEnCours.getGame();
+    @GetMapping("/drop/{id}")
+    public ModelAndView dropOn(@PathVariable ("id") Integer id) {
+        Integer index = id-1;
         ModelAndView mav = new ModelAndView("game");
-        mav.addObject("game",game);
-        return mav;
-    }
-
-    @GetMapping ("/drop/{i}")
-    public ModelAndView dropIn(){
         GameModel game = partieEnCours.getGame();
-        ModelAndView mav = new ModelAndView("game");
+        game.ajouter(index);
+        partieEnCours.setGame(game);
         mav.addObject("game",game);
         return mav;
     }

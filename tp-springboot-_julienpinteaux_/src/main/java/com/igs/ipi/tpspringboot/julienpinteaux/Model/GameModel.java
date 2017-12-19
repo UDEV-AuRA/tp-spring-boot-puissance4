@@ -29,4 +29,13 @@ public class GameModel {
     public void setTableau(Integer[][] tableau) {
         this.tableau = tableau;
     }
+
+    public void ajouter(Integer index){
+        for (int i = tableau.length-1 ; i >= 0 ; i--){
+            if (this.tableau[i][index] ==0) {
+                this.tableau[i][index] =1;
+                return;
+            }
+        }
+    }
 }
