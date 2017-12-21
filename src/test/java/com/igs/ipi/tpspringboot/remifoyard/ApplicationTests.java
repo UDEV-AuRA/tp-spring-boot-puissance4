@@ -1,4 +1,4 @@
-package com.igs.ipi.tpspringbootpetrillo;
+package com.igs.ipi.tpspringboot.remifoyard;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class TpSpringBootPetrilloApplicationTests {
+public class ApplicationTests {
 
 	@Test
 	public void contextLoads() {

@@ -1,12 +1,12 @@
-package com.igs.ipi.tpspringbootpetrillo;
+package com.igs.ipi.tpspringboot.remifoyard;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class TpSpringBootPetrilloApplication {
+public class Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TpSpringBootPetrilloApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 }
