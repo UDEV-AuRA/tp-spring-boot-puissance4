@@ -1,39 +1,21 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<bean id="userPreferences" class="com.foo.UserPreferences" scope="session"/>
 <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-<h1>PUISSANCE 4</h1>
-{{#game.tourJoueur1}}
-<img src="http://localhost:8080/rouge.png"/>
-{{/game.tourJoueur1}}
-User 1 : {{game.nom1}}
-{{ game.joueur1Gagnant }}
-<hr/>
-{{^game.tourJoueur1}}
-<img src="http://localhost:8080/bleu.png"/>
-{{/game.tourJoueur1}}
-User 2 : {{game.nom2}}
-<hr/>
-<table border="1">
-    <tbody>
-    {{#game.jetons}}
+{{game.nom1}}
+{{game.nom2}}
+<table>
+{{#game.tab}}
     <tr>
         {{#.}}
-        <td style="width:45px; height: 45px">
-            <a href="http://localhost:8080/game/drop/{{-index}}" style="display: block; height: 100%; text-decoration: none;">
-                {{#code}}
-                <img src="http://localhost:8080/{{.}}"/>
-                {{/code}}
-                {{^code}}
-                    &nbsp;
-                {{/code}}
-            </a>
-        </td>
+            <td style="padding: 10px; background-color: lightblue;">{{.}}</td>
         {{/.}}
     </tr>
-    {{/game.jetons}}
-    </tbody>
+{{/game.tab}}
 </table>
 </body>
 </html>
