@@ -1,10 +1,26 @@
 <!doctype html>
-<html lang="fr">
+<html>
 
 	<body>		
-
-	<p>Puissance 4</p> 	
-	</body>
-</html>
-
+		<h1>Puissance 4</h1> 	
+			<P>
+				{{#gameModele.tourJoueur1}}
+				==>
+				{{/gameModele.tourJoueur1}}
+				User 1 : {{gameModele.nom
+				New game !
+			</p>
+			<table border="1">
+     <tbody>
+		     {{#gameModele.jeton}}
+		         <tr>
+		             {{#.}}
+		                <td><a href="http://localhost:8080/game/drop/{{-index}}">{{.}}</a></td>
+		             {{/.}}
+		         </tr>
+		     {{/gameModele.jeton}}
+		     </tbody>
+ </table>
+  </body>
+  </html> 
 
