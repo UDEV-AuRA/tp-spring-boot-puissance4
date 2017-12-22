@@ -18,6 +18,7 @@ public class GameService {
             }
         }
         game1.setTableau(tab);
+        game1.setMessage(game1.getNomGamer1() + ", veuillez commnencer");
         return game1;
     }
 }

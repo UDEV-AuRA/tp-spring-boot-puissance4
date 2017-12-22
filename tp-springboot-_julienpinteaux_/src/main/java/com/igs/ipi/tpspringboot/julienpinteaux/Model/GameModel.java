@@ -5,9 +5,36 @@ public class GameModel {
     private String nomGamer1;
     private String nomGamer2;
     private Integer tableau[][] = new Integer[6][7];
+    private Integer tour = 0;
+    private String message;
+    private String style = "base";
+
+    public String getStyle() {
+        return style;
+    }
+
+    public void setStyle(String style) {
+        this.style = style;
+    }
 
     public String getNomGamer1() {
         return nomGamer1;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public Integer getTour() {
+        return tour;
+    }
+
+    public void setTour(Integer tour) {
+        this.tour = tour;
     }
 
     public void setNomGamer1(String nomGamer1) {
@@ -37,5 +64,6 @@ public class GameModel {
                 return;
             }
         }
+        tour++;
     }
 }

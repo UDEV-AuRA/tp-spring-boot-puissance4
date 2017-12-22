@@ -3,11 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>TP SPRING BOOT </title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
     <div><b>Joueur 1 : {{game.nomGamer1}}</b></div>
     <div><b>Joueur 2 : {{game.nomGamer2}}</b></div>
+
+    <div><b>{{game.message}}</b></div>
+    <div>Tour<b>{{game.tour}}</b></div>
 
     <table border="1" width="300px" height="200px">
 
@@ -17,7 +21,7 @@
                 <tr>
 
                     {{#.}}
-                    <td><a href="http://localhost:8080/game/drop/{{-index}}">{{.}}</a></td>
+                    <td><a class="{{game.style}}" href="http://localhost:8080/game/drop/{{-index}}">{{.}}</a></td>
                     {{/.}}
 
                 </tr>

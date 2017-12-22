@@ -42,6 +42,18 @@ public class GameController {
         Integer index = id-1;
         ModelAndView mav = new ModelAndView("game");
         GameModel game = partieEnCours.getGame();
+        Integer tour = game.getTour();
+        tour++;
+        if (tour%2 != 0 ) {
+            game.setMessage("Au tour de " + game.getNomGamer2());
+            game.setStyle("bleu");
+        }
+        else {
+            game.setMessage("Au tour de " + game.getNomGamer1());
+            game.setStyle("bleu");
+        }
+
+        game.setTour(tour);
         game.ajouter(index);
         partieEnCours.setGame(game);
         mav.addObject("game",game);
