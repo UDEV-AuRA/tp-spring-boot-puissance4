@@ -1,39 +1,32 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
-<head>
-</head>
-<body>
-<h1>PUISSANCE 4</h1>
-{{#game.tourJoueur1}}
-<img src="http://localhost:8080/rouge.png"/>
-{{/game.tourJoueur1}}
-User 1 : {{game.nom1}}
-{{ game.joueur1Gagnant }}
-<hr/>
-{{^game.tourJoueur1}}
-<img src="http://localhost:8080/bleu.png"/>
-{{/game.tourJoueur1}}
-User 2 : {{game.nom2}}
-<hr/>
-<table border="1">
-    <tbody>
-    {{#game.jetons}}
-    <tr>
-        {{#.}}
-        <td style="width:45px; height: 45px">
-            <a href="http://localhost:8080/game/drop/{{-index}}" style="display: block; height: 100%; text-decoration: none;">
-                {{#code}}
-                <img src="http://localhost:8080/{{.}}"/>
-                {{/code}}
-                {{^code}}
-                    &nbsp;
-                {{/code}}
-            </a>
-        </td>
-        {{/.}}
-    </tr>
-    {{/game.jetons}}
-    </tbody>
-</table>
-</body>
+    <head>
+        <title>{{title}}</title>
+        <style>
+        	#titre {
+        	text-align:center;
+        	}
+        	table {
+        		width : 70%;
+        		height : 400px;
+        		margin-left : 15%;
+        	}
+        </style>
+    </head>
+
+    <body>
+		<div id="titre">
+			<strong>{{toto.nomJoueur1}}</strong> VS <strong>{{toto.nomJoueur2}}</strong>
+		</div>
+		
+		<table border="1">
+			{{#toto.tableauJetons}}
+				<tr>
+					{{#.}}
+						<td>{{.}}</td>
+					{{/.}}
+				</tr>
+			{{/toto.tableauJetons}}
+		</table>
+    </body>
 </html>
