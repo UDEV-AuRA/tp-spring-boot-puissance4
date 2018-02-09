@@ -1,11 +1,38 @@
-
 <html>
 <head>
+    <title>Jeu Puissance 4</title>
 </head>
 <body>
+<p>Que le jeu commence</p>
+{{#jeu.tourJ1}}
+Your turn
+<img src="http://localhost:8080/bleu.png"/>
+{{/jeu.tourJ1}}
+<p>Sur ma gauche le joueur {{jeu.nom1}}</p>
 
-<p>Coucou</p> 
+{{^jeu.tourJ1}}
+Your turn
+<img src="http://localhost:8080/jaune.png"/>
+{{/jeu.tourJ1}}
+<p>Sur ma droite le joueur {{jeu.nom2}}</p>
+
+<table border="2" width="1540px" heigth="1380px">
+    <tbody>
+    {{#jeu.piece}}
+    <tr>
+        {{#.}}
+        <td style="width: 215px ;height: 215px"><a href="http://localhost:8080/game/drop/{{-index}}">
+            {{#code}}
+                            <img src="http://localhost:8080/{{.}}"/>
+                           {{/code}}
+                          {{^code}}
+                                &nbsp;
+                           {{/code}}
+        </a></td>
+        {{/.}}
+    </tr>
+    {{/jeu.piece}}
+    </tbody>
+</table>
 </body>
-
-
 </html>
